@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,7 +17,7 @@
         android:layout_marginBottom="8dp"/>
 
     <TextView
-        android:id="@+id/tvDeviceInfo"  <!-- ✅ 添加ID -->
+        android:id="@+id/tvDeviceInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="正在获取网络信息..."
@@ -30,8 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        app:cardElevation="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 android:layout_marginBottom="16dp"/>
 
             <Button
-                android:id="@+id/btnStartServer"  <!-- ✅ 添加ID -->
+                android:id="@+id/btnStartServer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="🚀 启动文件服务器"
@@ -99,7 +99,7 @@
                 android:layout_marginBottom="16dp"/>
 
             <EditText
-                android:id="@+id/etServerIp"  <!-- ✅ 添加ID -->
+                android:id="@+id/etServerIp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="输入电脑IP (如: 192.168.1.5)"
@@ -109,7 +109,7 @@
                 android:layout_marginBottom="12dp"/>
 
             <Button
-                android:id="@+id/btnConnect"  <!-- ✅ 添加ID -->
+                android:id="@+id/btnConnect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="🔗 连接服务器"
@@ -121,7 +121,7 @@
 
     <!-- 文件管理 -->
     <Button
-        android:id="@+id/btnManageFiles"  <!-- ✅ 添加ID -->
+        android:id="@+id/btnManageFiles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="📂 管理本机文件"
