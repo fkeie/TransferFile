@@ -3,47 +3,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="24dp"
     android:background="#f5f7fa">
 
-    <LinearLayout
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📁 TransferFile 文件传输"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#1a1a1a"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvDeviceInfo"  <!-- ✅ 添加ID -->
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正在获取网络信息..."
+        android:textSize="14sp"
+        android:textColor="#666"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- 模式一：手机作为服务器 -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp">
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <Button
-            android:id="@+id/btnUpload"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="📤 上传文件"
-            android:textColor="?attr/colorOnPrimary"
-            android:backgroundTint="#4CAF50"
-            android:layout_marginEnd="8dp"/>
-
-        <Button
-            android:id="@+id/btnUploadMultiple"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="📤 批量上传"
-            android:textColor="?attr/colorOnPrimary"
-            android:backgroundTint="#2196F3"/>
-    </LinearLayout>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp"
-            android:clipToPadding="false"/>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📤 发送模式"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机作为服务器，电脑通过浏览器访问"
+                android:textSize="14sp"
+                android:textColor="#666"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnStartServer"  <!-- ✅ 添加ID -->
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚀 启动文件服务器"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:backgroundTint="#4CAF50"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 模式二：手机作为客户端 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📥 接收模式"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连接电脑服务器，上传/下载文件"
+                android:textSize="14sp"
+                android:textColor="#666"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etServerIp"  <!-- ✅ 添加ID -->
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="输入电脑IP (如: 192.168.1.5)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnConnect"  <!-- ✅ 添加ID -->
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔗 连接服务器"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:backgroundTint="#2196F3"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 文件管理 -->
+    <Button
+        android:id="@+id/btnManageFiles"  <!-- ✅ 添加ID -->
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📂 管理本机文件"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:backgroundTint="#FF9800"
+        android:layout_marginTop="8dp"/>
 
 </LinearLayout>
